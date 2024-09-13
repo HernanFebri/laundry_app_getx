@@ -18,11 +18,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-      apiKey: "AIzaSyBs0_0LYxOaM_8Xr0ykvQ2kGHgSGxVymVQ",
-      appId: "1:598789617871:android:0b7f29cae2e74f7eaf1fba",
-      messagingSenderId: "598789617871",
-      projectId: "pelayanan-laundri",
-      storageBucket: "gs://pelayanan-laundri.appspot.com",
+      apiKey: "AIzaSyBTxIxrXum3_GXO2yvzrLB9FT2ds_IIkM4",
+      appId: "1:784242798005:android:7cc0883a2f2102ac9cfdfc",
+      messagingSenderId: "784242798005",
+      projectId: "laundry-fc799",
+      storageBucket: "laundry-fc799.appspot.com",
     ),
   );
 
