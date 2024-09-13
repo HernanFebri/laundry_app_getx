@@ -1,0 +1,234 @@
+import 'dart:typed_data';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pelayanan_laundri/app/modules/detailorder/controllers/detailorder_controller.dart';
+import 'package:pelayanan_laundri/app/modules/edittransaksi/views/edittransaksi_view.dart';
+import 'package:pelayanan_laundri/app/modules/laporan/controllers/laporan_controller.dart';
+import 'package:pelayanan_laundri/utils/constants.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:screenshot/screenshot.dart';
+
+class DetailorderView extends GetView<LaporanController> {
+  DetailorderView({Key? key}) : super(key: key);
+
+  final DetailorderController detailorderController =
+      Get.put(DetailorderController());
+
+  @override
+  Widget build(BuildContext context) {
+    var laporanController = Get.find<LaporanController>();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Detail Order',
+          style: TextStyle(
+            fontSize: 20,
+            color: Constants.primaryColor,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.keyboard_arrow_left_rounded,
+            size: 45,
+            color: Constants.primaryColor,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.to(() => EditTransaksiView());
+            },
+            icon: Icon(
+              Icons.edit_note_rounded,
+              size: 40,
+              color: Constants.primaryColor,
+            ),
+          ),
+        ],
+      ),
+      body: Obx(() {
+        var laporan = laporanController.selectedLaporan.value;
+        return StreamBuilder<DocumentSnapshot>(
+          stream: FirebaseFirestore.instance
+              .collection('laporanTransaksi')
+              .doc(laporan['id'])
+              .snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            }
+            if (!snapshot.hasData || snapshot.data == null) {
+              return Center(child: Text('No Data Available'));
+            }
+
+            var updatedLaporan =
+                snapshot.data!.data() as Map<String, dynamic>? ?? {};
+            return SingleChildScrollView(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: [
+                  Screenshot(
+                    controller: detailorderController.screenshotController,
+                    child: buildCard(updatedLaporan),
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(double.infinity, 45),
+                      backgroundColor: Constants.primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () async {
+                      await detailorderController.saveInvoiceAsImage();
+                    },
+                    child: Text(
+                      "Simpan",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Constants.scaffoldbackgroundColor,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(double.infinity, 45),
+                      backgroundColor: Constants.thirdColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {
+                      var nomorWhatsApp =
+                          updatedLaporan['pelanggan']?['nomor WhatsApp'] ?? '';
+                      detailorderController.saveInvoiceAndSendWhatsApp(
+                          nomorWhatsApp, 'Hi ini invoice pesanan Anda');
+                    },
+                    child: Text(
+                      "Kirim WhatsApp",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Constants.scaffoldbackgroundColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      }),
+    );
+  }
+
+  Widget buildCard(Map<String, dynamic> laporan) {
+    return Card(
+      elevation: 10,
+      shadowColor: Colors.grey,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            color: Colors.white.withOpacity(0.5),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    "assets/images/invoice.png",
+                    width: 400,
+                    height: 80,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Nama : ${laporan['pelanggan']?['nama pelanggan'] ?? 'N/A'}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  Text(
+                    'Nomor WhatsApp : ${laporan['pelanggan']?['nomor WhatsApp'] ?? 'N/A'}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  Text(
+                    'Alamat : ${laporan['pelanggan']?['alamat'] ?? 'N/A'}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 10),
+                  Divider(height: 2, color: Constants.primaryColor),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Nama Parfum :",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 10),
+                  for (var produk in laporan['parfum'] ?? []) ...[
+                    Text(
+                      '- ${produk}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                  Divider(height: 2, color: Constants.primaryColor),
+                  const Text(
+                    "Nama Produk :",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 10),
+                  for (var produk in laporan['produk'] ?? []) ...[
+                    Text(
+                      '- ${produk['nama'] ?? 'N/A'}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                  Divider(height: 2, color: Constants.primaryColor),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Metode Pembayaran : ${laporan['metode_pembayaran'] ?? 'N/A'}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 10),
+                  Divider(height: 2, color: Constants.primaryColor),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Status Pembayaran : ${laporan['status_pembayaran'] ?? 'N/A'}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 10),
+                  Divider(height: 2, color: Constants.primaryColor),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Status Pengiriman : ${laporan['status_pengiriman'] ?? 'N/A'}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 10),
+                  Divider(height: 2, color: Constants.primaryColor),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Total Harga : ${laporan['totalHarga']?.toStringAsFixed(0) ?? '0'}',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 10),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "598789617871",
+    "project_id": "pelayanan-laundri",
+    "storage_bucket": "pelayanan-laundri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598789617871:android:0b7f29cae2e74f7eaf1fba",
+        "android_client_info": {
+          "package_name": "com.example.pelayanan_laundri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs0_0LYxOaM_8Xr0ykvQ2kGHgSGxVymVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
