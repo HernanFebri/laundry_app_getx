@@ -145,7 +145,9 @@ class HomeView extends GetView<HomeController> {
                       bottomLeft: Radius.circular(20),
                     ),
                     image: const DecorationImage(
-                      image: AssetImage('assets/images/frameberanda.png'),
+                      image: AssetImage(
+                        'assets/images/frameberanda.png',
+                      ),
                       fit: BoxFit.cover,
                     ),
                   ),

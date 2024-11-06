@@ -24,15 +24,17 @@ class OnboardingView extends GetView<OnboardingController> {
                 top: 0,
                 child: Image.asset(
                   "assets/images/logo.png",
+                  filterQuality: FilterQuality.high,
                 ),
               ),
               Positioned(
                 bottom: 0,
                 left: 0,
                 right: 0,
-                top: 50,
+                top: 20,
                 child: Image.asset(
                   "assets/images/logo2.png",
+                  filterQuality: FilterQuality.high,
                 ),
               ),
               Center(
@@ -82,7 +84,9 @@ class OnboardingView extends GetView<OnboardingController> {
                                 fontFamily: 'Poppins',
                               ),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(
+                              height: 10,
+                            ),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 minimumSize: Size(
