@@ -85,7 +85,7 @@ class OnboardingView extends GetView<OnboardingController> {
                               ),
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
@@ -110,7 +110,7 @@ class OnboardingView extends GetView<OnboardingController> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 20),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 minimumSize: Size(

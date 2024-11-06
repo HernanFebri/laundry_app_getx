@@ -35,13 +35,15 @@ class DetailorderController extends GetxController {
 
   Future<void> saveInvoiceAndSendWhatsApp(
       String phoneNumber, String message) async {
-    // Request permission to write to storage
-    final status = await Permission.storage.request();
+    // Meminta izin untuk mengakses penyimpanan penuh di Android 11 ke atas
+    final status = await Permission.manageExternalStorage.request();
+
+    // Jika izin diberikan
     if (status.isGranted) {
-      // Capture screenshot
+      // Jika izin disetujui, lanjutkan dengan proses penyimpanan dan pengambilan screenshot
       screenshotController.capture().then((Uint8List? image) async {
         if (image != null) {
-          // Save image to gallery
+          // Simpan gambar ke galeri
           final result = await ImageGallerySaver.saveImage(
             Uint8List.fromList(image),
             quality: 60,
@@ -51,12 +53,12 @@ class DetailorderController extends GetxController {
           if (result['isSuccess'] == true) {
             Get.snackbar("Success", "Invoice saved to gallery!");
 
-            // Save the image to a temporary directory
+            // Simpan gambar ke direktori sementara
             final tempDir = await getTemporaryDirectory();
             final file = File('${tempDir.path}/invoice.png');
             await file.writeAsBytes(image);
 
-            // Open WhatsApp with the image attached
+            // Kirim WhatsApp dengan gambar terlampir
             final whatsappUrl =
                 'https://api.whatsapp.com/send?phone=$phoneNumber&text=${Uri.encodeComponent(message)}';
 
@@ -75,8 +77,11 @@ class DetailorderController extends GetxController {
         Get.snackbar("Error", "Failed to capture screenshot: $onError");
       });
     } else {
+      // Jika izin tidak diberikan, tampilkan notifikasi untuk meminta izin
       Get.snackbar("Permission Denied",
-          "Storage permission is required to save images.");
+          "Please grant storage permission from settings.");
+      // Buka pengaturan aplikasi untuk meminta izin secara manual
+      openAppSettings();
     }
   }
 }
