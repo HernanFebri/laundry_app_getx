@@ -1,13 +1,14 @@
-import 'dart:typed_data';
 import 'dart:ui';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/app/modules/detailorder/controllers/detailorder_controller.dart';
-import 'package:pelayanan_laundri/app/modules/edittransaksi/views/edittransaksi_view.dart';
-import 'package:pelayanan_laundri/app/modules/laporan/controllers/laporan_controller.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:screenshot/screenshot.dart';
+
+import '../../../../utils/constants.dart';
+import '../../edittransaksi/views/edittransaksi_view.dart';
+import '../../laporan/controllers/laporan_controller.dart';
+import '../controllers/detailorder_controller.dart';
 
 class DetailorderView extends GetView<LaporanController> {
   DetailorderView({Key? key}) : super(key: key);

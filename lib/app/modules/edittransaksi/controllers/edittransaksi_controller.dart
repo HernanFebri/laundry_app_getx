@@ -1,7 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pelayanan_laundri/app/modules/laporan/controllers/laporan_controller.dart';
+
+import '../../laporan/controllers/laporan_controller.dart';
 
 class EditTransaksiController extends GetxController {
   TextEditingController paymentMethodController = TextEditingController();

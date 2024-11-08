@@ -1,6 +1,5 @@
-import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:get/get.dart';
 
 class TransaksiController extends GetxController {
   var selectedPelanggan = {}.obs;

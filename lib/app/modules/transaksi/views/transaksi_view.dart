@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
+
+import '../../../../utils/constants.dart';
+import '../../produk/views/produk_view.dart';
 import '../controllers/transaksi_controller.dart';
-import 'package:pelayanan_laundri/app/modules/produk/views/produk_view.dart';
 
 class TransaksiView extends GetView<TransaksiController> {
   const TransaksiView({Key? key}) : super(key: key);

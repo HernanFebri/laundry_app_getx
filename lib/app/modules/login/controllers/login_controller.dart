@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:pelayanan_laundri/app/routes/app_pages.dart';
+import '../../../routes/app_pages.dart';
 
-import 'package:pelayanan_laundri/app/modules/profile/controllers/profile_controller.dart';
+import '../../profile/controllers/profile_controller.dart';
 
 class LoginController extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;

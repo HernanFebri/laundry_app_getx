@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pelayanan_laundri/app/modules/detailorder/views/detailorder_view.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
+import '../../detailorder/views/detailorder_view.dart';
+import '../../../../utils/constants.dart';
 import '../controllers/laporan_controller.dart';
 
 class LaporanView extends GetView<LaporanController> {

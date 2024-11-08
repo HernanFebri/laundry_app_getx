@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/app/modules/home/controllers/home_controller.dart';
-import 'package:pelayanan_laundri/app/modules/profile/controllers/profile_controller.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
+import '../controllers/home_controller.dart';
+import '../../profile/controllers/profile_controller.dart';
+import '../../../../utils/constants.dart';
 
 class HomeView extends GetView<HomeController> {
   HomeView({Key? key}) : super(key: key);

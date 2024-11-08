@@ -1,9 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
 
+import '../../../../utils/constants.dart';
 import '../controllers/lupa_password_controller.dart';
 
 class LupaPasswordView extends GetView<LupaPasswordController> {
@@ -121,7 +120,8 @@ class LupaPasswordView extends GetView<LupaPasswordController> {
                               ),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  minimumSize: const Size(double.infinity, 45), backgroundColor: Constants.primaryColor,
+                                  minimumSize: const Size(double.infinity, 45),
+                                  backgroundColor: Constants.primaryColor,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),

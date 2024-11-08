@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
 
+import '../../../../utils/constants.dart';
 import '../controllers/tambah_pelanggan_controller.dart';
 
 class TambahPelangganView extends GetView<TambahPelangganController> {
@@ -126,7 +126,8 @@ class TambahPelangganView extends GetView<TambahPelangganController> {
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)), backgroundColor: Constants.primaryColor,
+                          borderRadius: BorderRadius.circular(10)),
+                      backgroundColor: Constants.primaryColor,
                       padding: const EdgeInsets.all(10)),
                   onPressed: () {
                     controller.tambahPelanggan(

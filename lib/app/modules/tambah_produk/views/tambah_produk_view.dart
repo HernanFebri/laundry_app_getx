@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
+
+import '../../../../utils/constants.dart';
 import '../controllers/tambah_produk_controller.dart';
 
 class TambahProdukView extends GetView<TambahProdukController> {
@@ -124,7 +125,9 @@ class TambahProdukView extends GetView<TambahProdukController> {
               const SizedBox(height: 20),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white, backgroundColor: Constants.primaryColor, shape: RoundedRectangleBorder(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Constants.primaryColor,
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),

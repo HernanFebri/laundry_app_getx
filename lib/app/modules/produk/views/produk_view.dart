@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/app/modules/tambah_produk/views/tambah_produk_view.dart';
-import 'package:pelayanan_laundri/app/modules/transaksi/controllers/transaksi_controller.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
+import '../../tambah_produk/views/tambah_produk_view.dart';
+import '../../transaksi/controllers/transaksi_controller.dart';
+import '../../../../utils/constants.dart';
 import '../controllers/produk_controller.dart';
 
 class ProdukView extends GetView<ProdukController> {

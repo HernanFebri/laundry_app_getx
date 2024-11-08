@@ -1,9 +1,9 @@
-import 'package:get/get.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import 'package:pelayanan_laundri/app/routes/app_pages.dart';
+import '../../../routes/app_pages.dart';
 
 class RegisterController extends GetxController {
   TextEditingController emailController = TextEditingController();

@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/edittransaksi/bindings/edittransaksi_binding.dart';
-import '../modules/edittransaksi/views/edittransaksi_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/laporan/bindings/laporan_binding.dart';

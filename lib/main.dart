@@ -3,15 +3,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/app/modules/detailorder/controllers/detailorder_controller.dart';
-import 'package:pelayanan_laundri/app/modules/edittransaksi/controllers/edittransaksi_controller.dart';
-import 'package:pelayanan_laundri/app/modules/laporan/controllers/laporan_controller.dart';
-import 'package:pelayanan_laundri/app/modules/pelanggan/controllers/pelanggan_controller.dart';
-import 'package:pelayanan_laundri/app/modules/produk/controllers/produk_controller.dart';
-import 'package:pelayanan_laundri/app/modules/profile/controllers/profile_controller.dart';
-import 'package:pelayanan_laundri/app/modules/tambah_pelanggan/controllers/tambah_pelanggan_controller.dart';
-import 'package:pelayanan_laundri/app/modules/tambah_produk/controllers/tambah_produk_controller.dart';
-import 'package:pelayanan_laundri/app/modules/transaksi/controllers/transaksi_controller.dart';
+import 'app/modules/detailorder/controllers/detailorder_controller.dart';
+import 'app/modules/edittransaksi/controllers/edittransaksi_controller.dart';
+import 'app/modules/laporan/controllers/laporan_controller.dart';
+import 'app/modules/pelanggan/controllers/pelanggan_controller.dart';
+import 'app/modules/produk/controllers/produk_controller.dart';
+import 'app/modules/profile/controllers/profile_controller.dart';
+import 'app/modules/tambah_pelanggan/controllers/tambah_pelanggan_controller.dart';
+import 'app/modules/tambah_produk/controllers/tambah_produk_controller.dart';
+import 'app/modules/transaksi/controllers/transaksi_controller.dart';
 import 'app/routes/app_pages.dart';
 
 void main() async {

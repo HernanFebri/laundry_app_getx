@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/app/modules/laporan/controllers/laporan_controller.dart';
-import 'package:pelayanan_laundri/utils/constants.dart';
+import '../../laporan/controllers/laporan_controller.dart';
+import '../../../../utils/constants.dart';
 import '../controllers/edittransaksi_controller.dart';
 
 class EditTransaksiView extends GetView<EditTransaksiController> {
@@ -88,7 +88,8 @@ class EditTransaksiView extends GetView<EditTransaksiController> {
             SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 45), backgroundColor: Constants.primaryColor,
+                minimumSize: Size(double.infinity, 45),
+                backgroundColor: Constants.primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
