@@ -13,7 +13,7 @@ class TransaksiView extends GetView<TransaksiController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Constants.scaffoldbackgroundColor,
-        title: Text(
+        title: const Text(
           'Transaksi',
           style: TextStyle(
             color: Constants.primaryColor,
@@ -27,7 +27,7 @@ class TransaksiView extends GetView<TransaksiController> {
           onPressed: () {
             Get.offAllNamed('/home');
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 45,
             color: Constants.primaryColor,
@@ -56,7 +56,7 @@ class TransaksiView extends GetView<TransaksiController> {
                     onPressed: () {
                       Get.toNamed('/pelanggan');
                     },
-                    child: Text(
+                    child: const Text(
                       "Pelanggan",
                       style: TextStyle(
                         color: Constants.scaffoldbackgroundColor,
@@ -64,7 +64,7 @@ class TransaksiView extends GetView<TransaksiController> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   ElevatedButton(
@@ -78,7 +78,7 @@ class TransaksiView extends GetView<TransaksiController> {
                     onPressed: () {
                       Get.to(() => const ProdukView());
                     },
-                    child: Text(
+                    child: const Text(
                       "Parfum",
                       style: TextStyle(
                         fontFamily: 'Poppins',
@@ -86,7 +86,7 @@ class TransaksiView extends GetView<TransaksiController> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   ElevatedButton(
@@ -100,7 +100,7 @@ class TransaksiView extends GetView<TransaksiController> {
                     onPressed: () {
                       Get.toNamed('/produk');
                     },
-                    child: Text(
+                    child: const Text(
                       "Produk",
                       style: TextStyle(
                         fontFamily: 'Poppins',
@@ -165,7 +165,7 @@ class TransaksiView extends GetView<TransaksiController> {
                                   onPressed: () {
                                     controller.selectPelanggan({});
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.delete_outlined,
                                     color: Constants.primaryColor,
                                   ),
@@ -173,7 +173,7 @@ class TransaksiView extends GetView<TransaksiController> {
                               ],
                             ),
                           ),
-                          Divider(color: Constants.primaryColor),
+                          const Divider(color: Constants.primaryColor),
                         ],
                       );
                     } else {
@@ -217,7 +217,7 @@ class TransaksiView extends GetView<TransaksiController> {
                                             onPressed: () {
                                               controller.removeParfum(index);
                                             },
-                                            icon: Icon(
+                                            icon: const Icon(
                                               Icons.delete_outlined,
                                               color: Constants.primaryColor,
                                             ),
@@ -227,7 +227,7 @@ class TransaksiView extends GetView<TransaksiController> {
                                     ],
                                   ),
                                 ),
-                                Divider(color: Constants.primaryColor),
+                                const Divider(color: Constants.primaryColor),
                               ],
                             );
                           },
@@ -338,7 +338,7 @@ class TransaksiView extends GetView<TransaksiController> {
                                                     controller
                                                         .removeProduk(index);
                                                   },
-                                                  icon: Icon(
+                                                  icon: const Icon(
                                                     Icons.delete_outlined,
                                                     color:
                                                         Constants.primaryColor,
@@ -365,7 +365,7 @@ class TransaksiView extends GetView<TransaksiController> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Metode Bayar",
                         style: TextStyle(
                           color: Constants.primaryColor,
@@ -399,7 +399,7 @@ class TransaksiView extends GetView<TransaksiController> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Status Bayar",
                         style: TextStyle(
                           color: Constants.primaryColor,
@@ -431,7 +431,7 @@ class TransaksiView extends GetView<TransaksiController> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Pengiriman",
                         style: TextStyle(
                           color: Constants.primaryColor,
@@ -465,7 +465,7 @@ class TransaksiView extends GetView<TransaksiController> {
             const SizedBox(height: 20),
             Obx(() => Text(
                   "Total: Rp.${controller.totalHarga.value.toStringAsFixed(0)}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: 'Poppins',
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -484,7 +484,7 @@ class TransaksiView extends GetView<TransaksiController> {
               onPressed: () async {
                 controller.saveTransaksi();
               },
-              child: Text(
+              child: const Text(
                 "Simpan",
                 style: TextStyle(
                   color: Constants.scaffoldbackgroundColor,

@@ -40,7 +40,7 @@ class LupaPasswordView extends GetView<LupaPasswordController> {
                           onTap: () {
                             Navigator.of(context).pop();
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.keyboard_arrow_left_rounded,
                             size: 45,
                             color: Constants.scaffoldbackgroundColor,
@@ -97,7 +97,7 @@ class LupaPasswordView extends GetView<LupaPasswordController> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              Text(
+                              const Text(
                                 "Masukkan Email",
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
@@ -138,19 +138,19 @@ class LupaPasswordView extends GetView<LupaPasswordController> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               Center(
                                 child: RichText(
                                   text: TextSpan(
                                     text: "Sudah punya akun? ",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Constants.primaryColor,
                                       fontFamily: 'Poppins',
                                     ),
                                     children: [
                                       TextSpan(
                                         text: "Masuk",
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontFamily: 'Poppins',
                                           color: Constants.primaryColor,
                                           fontWeight: FontWeight.bold,

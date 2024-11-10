@@ -12,7 +12,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Tambah Produk',
           style: TextStyle(
             color: Constants.primaryColor,
@@ -25,7 +25,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 45,
             color: Constants.primaryColor,
@@ -39,7 +39,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              const Text(
                 "Nama Produk",
                 style: TextStyle(
                   fontFamily: 'Poppins',
@@ -48,7 +48,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
                   color: Constants.primaryColor,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               TextField(
                 controller: controller.namaController,
                 decoration: const InputDecoration(
@@ -64,7 +64,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
                 return Column(
                   children: [
                     if (controller.selectedKategori.value != 'Parfum') ...[
-                      Align(
+                      const Align(
                         alignment: Alignment.topLeft,
                         child: Text(
                           "Harga",
@@ -76,7 +76,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       TextField(
                         controller: controller.hargaController,
                         decoration: const InputDecoration(
@@ -92,7 +92,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
                   ],
                 );
               }),
-              Text(
+              const Text(
                 "Kategori",
                 style: TextStyle(
                   fontFamily: 'Poppins',
@@ -101,7 +101,7 @@ class TambahProdukView extends GetView<TambahProdukController> {
                   color: Constants.primaryColor,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               DropdownButtonFormField<String>(
                 value: controller.selectedKategori.value,
                 onChanged: (value) {

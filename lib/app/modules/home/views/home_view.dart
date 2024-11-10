@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../controllers/home_controller.dart';
-import '../../profile/controllers/profile_controller.dart';
+
 import '../../../../utils/constants.dart';
+import '../../profile/controllers/profile_controller.dart';
+import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   HomeView({Key? key}) : super(key: key);
@@ -15,12 +16,12 @@ class HomeView extends GetView<HomeController> {
   Future<bool> onWillPop() async {
     DateTime now = DateTime.now();
     if (currentBackPressTime == null ||
-        now.difference(currentBackPressTime!) > Duration(seconds: 2)) {
+        now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
       currentBackPressTime = now;
       Get.snackbar(
         'Peringatan',
         'Tekan kembali sekali lagi untuk keluar',
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
         snackPosition: SnackPosition.BOTTOM,
       );
       return false;
@@ -38,7 +39,7 @@ class HomeView extends GetView<HomeController> {
           toolbarHeight: 90,
           actions: [
             Padding(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -77,7 +78,7 @@ class HomeView extends GetView<HomeController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Selamat Datang",
                     style: TextStyle(
                       fontFamily: "Poppins",
@@ -87,7 +88,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                   Text(
                     controller.name.value,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontFamily: "Poppins",
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
@@ -97,13 +98,14 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             PopupMenuButton(
               color: Constants.scaffoldbackgroundColor,
-              icon: Icon(Icons.more_vert, color: Colors.white),
+              icon: const Icon(Icons.more_vert, color: Colors.white),
               itemBuilder: (BuildContext context) {
                 return [
-                  PopupMenuItem(
+                  const PopupMenuItem(
+                    value: 'Profile',
                     child: Text(
                       'Profile',
                       style: TextStyle(
@@ -111,7 +113,6 @@ class HomeView extends GetView<HomeController> {
                         fontFamily: 'Poppins',
                       ),
                     ),
-                    value: 'Profile',
                   ),
                 ];
               },
@@ -136,15 +137,15 @@ class HomeView extends GetView<HomeController> {
                 Container(
                   width: double.infinity,
                   height: 200,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Constants.primaryColor,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),
                       bottomRight: Radius.circular(20),
                       bottomLeft: Radius.circular(20),
                     ),
-                    image: const DecorationImage(
+                    image: DecorationImage(
                       image: AssetImage(
                         'assets/images/frameberanda.png',
                       ),
@@ -152,12 +153,12 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Expanded(
                   child: GridView.count(
                     crossAxisCount: 2,
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     children: [
                       GestureDetector(
                         onTap: () {

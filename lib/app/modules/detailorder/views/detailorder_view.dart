@@ -22,7 +22,7 @@ class DetailorderView extends GetView<LaporanController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Detail Order',
           style: TextStyle(
             fontSize: 20,
@@ -36,7 +36,7 @@ class DetailorderView extends GetView<LaporanController> {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 45,
             color: Constants.primaryColor,
@@ -45,9 +45,9 @@ class DetailorderView extends GetView<LaporanController> {
         actions: [
           IconButton(
             onPressed: () {
-              Get.to(() => EditTransaksiView());
+              Get.to(() => const EditTransaksiView());
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.edit_note_rounded,
               size: 40,
               color: Constants.primaryColor,
@@ -64,10 +64,10 @@ class DetailorderView extends GetView<LaporanController> {
               .snapshots(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             if (!snapshot.hasData || snapshot.data == null) {
-              return Center(child: Text('No Data Available'));
+              return const Center(child: Text('No Data Available'));
             }
 
             var updatedLaporan =
@@ -80,10 +80,10 @@ class DetailorderView extends GetView<LaporanController> {
                     controller: detailorderController.screenshotController,
                     child: buildCard(updatedLaporan),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 45),
+                      minimumSize: const Size(double.infinity, 45),
                       backgroundColor: Constants.primaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -92,7 +92,7 @@ class DetailorderView extends GetView<LaporanController> {
                     onPressed: () async {
                       await detailorderController.saveInvoiceAsImage();
                     },
-                    child: Text(
+                    child: const Text(
                       "Simpan",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -100,10 +100,10 @@ class DetailorderView extends GetView<LaporanController> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 45),
+                      minimumSize: const Size(double.infinity, 45),
                       backgroundColor: Constants.thirdColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -115,7 +115,7 @@ class DetailorderView extends GetView<LaporanController> {
                       detailorderController.saveInvoiceAndSendWhatsApp(
                           nomorWhatsApp, 'Hi ini invoice pesanan Anda');
                     },
-                    child: Text(
+                    child: const Text(
                       "Kirim WhatsApp",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -169,7 +169,7 @@ class DetailorderView extends GetView<LaporanController> {
                     style: const TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 10),
-                  Divider(height: 2, color: Constants.primaryColor),
+                  const Divider(height: 2, color: Constants.primaryColor),
                   const SizedBox(height: 10),
                   const Text(
                     "Nama Parfum :",
@@ -178,12 +178,12 @@ class DetailorderView extends GetView<LaporanController> {
                   const SizedBox(height: 10),
                   for (var produk in laporan['parfum'] ?? []) ...[
                     Text(
-                      '- ${produk}',
+                      '- $produk',
                       style: const TextStyle(fontSize: 16),
                     ),
                     const SizedBox(height: 10),
                   ],
-                  Divider(height: 2, color: Constants.primaryColor),
+                  const Divider(height: 2, color: Constants.primaryColor),
                   const Text(
                     "Nama Produk :",
                     style: TextStyle(fontSize: 16),
@@ -196,28 +196,28 @@ class DetailorderView extends GetView<LaporanController> {
                     ),
                     const SizedBox(height: 10),
                   ],
-                  Divider(height: 2, color: Constants.primaryColor),
+                  const Divider(height: 2, color: Constants.primaryColor),
                   const SizedBox(height: 10),
                   Text(
                     'Metode Pembayaran : ${laporan['metode_pembayaran'] ?? 'N/A'}',
                     style: const TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 10),
-                  Divider(height: 2, color: Constants.primaryColor),
+                  const Divider(height: 2, color: Constants.primaryColor),
                   const SizedBox(height: 10),
                   Text(
                     'Status Pembayaran : ${laporan['status_pembayaran'] ?? 'N/A'}',
                     style: const TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 10),
-                  Divider(height: 2, color: Constants.primaryColor),
+                  const Divider(height: 2, color: Constants.primaryColor),
                   const SizedBox(height: 10),
                   Text(
                     'Status Pengiriman : ${laporan['status_pengiriman'] ?? 'N/A'}',
                     style: const TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 10),
-                  Divider(height: 2, color: Constants.primaryColor),
+                  const Divider(height: 2, color: Constants.primaryColor),
                   const SizedBox(height: 10),
                   Text(
                     'Total Harga : ${laporan['totalHarga']?.toStringAsFixed(0) ?? '0'}',

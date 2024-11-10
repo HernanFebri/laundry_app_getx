@@ -40,7 +40,7 @@ class RegisterView extends GetView<RegisterController> {
                         onTap: () {
                           Navigator.of(context).pop();
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.keyboard_arrow_left_rounded,
                           size: 45,
                           color: Constants.scaffoldbackgroundColor,
@@ -100,7 +100,7 @@ class RegisterView extends GetView<RegisterController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Text(
+                          const Text(
                             "Nama Lengkap",
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -121,7 +121,7 @@ class RegisterView extends GetView<RegisterController> {
                           const SizedBox(
                             height: 15.0,
                           ),
-                          Text(
+                          const Text(
                             "Email",
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -143,7 +143,7 @@ class RegisterView extends GetView<RegisterController> {
                           const SizedBox(
                             height: 15.0,
                           ),
-                          Text(
+                          const Text(
                             "Password",
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -166,7 +166,7 @@ class RegisterView extends GetView<RegisterController> {
                           const SizedBox(
                             height: 15.0,
                           ),
-                          Text(
+                          const Text(
                             "Konfirmasi Password",
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -192,7 +192,7 @@ class RegisterView extends GetView<RegisterController> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Constants.primaryColor,
-                              minimumSize: Size(double.infinity, 50),
+                              minimumSize: const Size(double.infinity, 50),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -200,7 +200,7 @@ class RegisterView extends GetView<RegisterController> {
                             onPressed: () {
                               controller.register();
                             },
-                            child: Text(
+                            child: const Text(
                               "Register",
                               style: TextStyle(
                                   fontFamily: 'Poppins',
@@ -209,19 +209,19 @@ class RegisterView extends GetView<RegisterController> {
                                   color: Constants.scaffoldbackgroundColor),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                           Center(
                             child: RichText(
                               text: TextSpan(
                                 text: "Sudah punya akun? ",
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Constants.primaryColor,
                                   fontFamily: 'Poppins',
                                 ),
                                 children: [
                                   TextSpan(
                                     text: "Masuk",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontFamily: 'Poppins',
                                       color: Constants.primaryColor,
                                       fontWeight: FontWeight.w600,

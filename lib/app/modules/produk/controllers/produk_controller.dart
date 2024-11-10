@@ -28,7 +28,7 @@ class ProdukController extends GetxController {
       isLoading.value = true;
 
       // Fetch Kiloan products
-      await firestore.collection('produk').snapshots().listen((snapshot) {
+      firestore.collection('produk').snapshots().listen((snapshot) {
         kiloanList.value = snapshot.docs.map((doc) {
           var data = doc.data();
           data['id'] = doc.id;
@@ -38,7 +38,7 @@ class ProdukController extends GetxController {
       });
 
       // Fetch Satuan products
-      await firestore
+      firestore
           .collection('produk_satuan')
           .snapshots()
           .listen((snapshot) {
@@ -51,7 +51,7 @@ class ProdukController extends GetxController {
       });
 
       // Fetch Parfum products
-      await firestore.collection('parfum').snapshots().listen((snapshot) {
+      firestore.collection('parfum').snapshots().listen((snapshot) {
         parfumList.value = snapshot.docs.map((doc) {
           var data = doc.data();
           data['id'] = doc.id;

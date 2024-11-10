@@ -13,7 +13,7 @@ class TambahPelangganView extends GetView<TambahPelangganController> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Tambah Pelanggan',
           style: TextStyle(
             color: Constants.primaryColor,
@@ -26,7 +26,7 @@ class TambahPelangganView extends GetView<TambahPelangganController> {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 45,
             color: Constants.primaryColor,
@@ -40,7 +40,7 @@ class TambahPelangganView extends GetView<TambahPelangganController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              const Text(
                 "Nama Pelanggan",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
@@ -59,7 +59,7 @@ class TambahPelangganView extends GetView<TambahPelangganController> {
                 ),
               ),
               const SizedBox(height: 10),
-              Text(
+              const Text(
                 "Nomor WhatsApp",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
@@ -104,7 +104,7 @@ class TambahPelangganView extends GetView<TambahPelangganController> {
                 ],
               ),
               const SizedBox(height: 10),
-              Text(
+              const Text(
                 "Alamat",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
@@ -135,7 +135,7 @@ class TambahPelangganView extends GetView<TambahPelangganController> {
                         controller.nomorWhatsAppController.text,
                         controller.alamatController.text);
                   },
-                  child: Text(
+                  child: const Text(
                     "Simpan",
                     style: TextStyle(
                       color: Constants.scaffoldbackgroundColor,

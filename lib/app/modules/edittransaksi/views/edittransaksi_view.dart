@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../laporan/controllers/laporan_controller.dart';
+
 import '../../../../utils/constants.dart';
+import '../../laporan/controllers/laporan_controller.dart';
 import '../controllers/edittransaksi_controller.dart';
 
 class EditTransaksiView extends GetView<EditTransaksiController> {
@@ -17,7 +18,7 @@ class EditTransaksiView extends GetView<EditTransaksiController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Edit Transaksi',
           style: TextStyle(
             fontSize: 20,
@@ -31,7 +32,7 @@ class EditTransaksiView extends GetView<EditTransaksiController> {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 50.0,
             color: Constants.primaryColor,
@@ -44,7 +45,7 @@ class EditTransaksiView extends GetView<EditTransaksiController> {
           children: [
             DropdownButtonFormField<String>(
               value: controller.paymentMethodController.text,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Metode Pembayaran',
                 border: OutlineInputBorder(),
               ),
@@ -63,14 +64,14 @@ class EditTransaksiView extends GetView<EditTransaksiController> {
                 controller.paymentMethodController.text = value!;
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             DropdownButtonFormField<String>(
               value: controller.paymentStatusController.text.isEmpty
                   ? null
                   : controller.paymentStatusController.text,
               decoration: const InputDecoration(
                 labelText: 'Status Pembayaran',
-                border: const OutlineInputBorder(),
+                border: OutlineInputBorder(),
               ),
               items: [
                 'Lunas',
@@ -85,10 +86,10 @@ class EditTransaksiView extends GetView<EditTransaksiController> {
                 controller.paymentStatusController.text = value!;
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 45),
+                minimumSize: const Size(double.infinity, 45),
                 backgroundColor: Constants.primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -97,7 +98,7 @@ class EditTransaksiView extends GetView<EditTransaksiController> {
               onPressed: () {
                 controller.updateTransaksi();
               },
-              child: Text(
+              child: const Text(
                 "Simpan",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,

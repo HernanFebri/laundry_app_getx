@@ -40,7 +40,7 @@ class LoginView extends GetView<LoginController> {
                           onTap: () {
                             Get.back();
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.keyboard_arrow_left_rounded,
                             size: 45,
                             color: Constants.scaffoldbackgroundColor,
@@ -100,7 +100,7 @@ class LoginView extends GetView<LoginController> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              Text(
+                              const Text(
                                 "Email",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
@@ -119,8 +119,8 @@ class LoginView extends GetView<LoginController> {
                                   prefixIcon: Icon(Icons.email),
                                 ),
                               ),
-                              SizedBox(height: 20.0),
-                              Text(
+                              const SizedBox(height: 20.0),
+                              const Text(
                                 "Password",
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
@@ -140,10 +140,10 @@ class LoginView extends GetView<LoginController> {
                                   prefixIcon: Icon(Icons.lock),
                                 ),
                               ),
-                              SizedBox(height: 20.0),
+                              const SizedBox(height: 20.0),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  minimumSize: Size(double.infinity, 45),
+                                  minimumSize: const Size(double.infinity, 45),
                                   backgroundColor: Constants.primaryColor,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -152,7 +152,7 @@ class LoginView extends GetView<LoginController> {
                                 onPressed: () {
                                   controller.login();
                                 },
-                                child: Text(
+                                child: const Text(
                                   "Masuk",
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
@@ -160,14 +160,14 @@ class LoginView extends GetView<LoginController> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Align(
                                 alignment: Alignment.topRight,
                                 child: TextButton(
                                   onPressed: () {
                                     Get.toNamed('/lupa-password');
                                   },
-                                  child: Text(
+                                  child: const Text(
                                     "Lupa Password?",
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
@@ -176,19 +176,19 @@ class LoginView extends GetView<LoginController> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Center(
                                 child: RichText(
                                   text: TextSpan(
                                     text: "Belum punya akun? ",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontFamily: 'Poppins',
                                       color: Constants.primaryColor,
                                     ),
                                     children: [
                                       TextSpan(
                                         text: "Daftar Sekarang",
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontFamily: 'Poppins',
                                           color: Constants.primaryColor,
                                           fontWeight: FontWeight.bold,

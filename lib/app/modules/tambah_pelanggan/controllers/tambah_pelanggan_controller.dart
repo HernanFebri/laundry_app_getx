@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pelayanan_laundri/app/modules/pelanggan/controllers/pelanggan_controller.dart';
+
+import '../../pelanggan/controllers/pelanggan_controller.dart';
 
 class TambahPelangganController extends GetxController {
   final TextEditingController namaPelangganController = TextEditingController();

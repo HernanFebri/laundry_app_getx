@@ -1,8 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import '../../../routes/app_pages.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../profile/controllers/profile_controller.dart';
 
 class LoginController extends GetxController {
@@ -10,16 +10,6 @@ class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   var passwordVisible = true.obs;
-
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   void login() async {
     final String email = emailController.text.trim();

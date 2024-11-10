@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../utils/constants.dart';
 import '../../tambah_pelanggan/views/tambah_pelanggan_view.dart';
 import '../../transaksi/controllers/transaksi_controller.dart';
-import '../../../../utils/constants.dart';
 import '../controllers/pelanggan_controller.dart';
 
 class PelangganView extends GetView<PelangganController> {
@@ -12,7 +13,7 @@ class PelangganView extends GetView<PelangganController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'List Pelanggan',
           style: TextStyle(
             color: Constants.primaryColor,
@@ -26,7 +27,7 @@ class PelangganView extends GetView<PelangganController> {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 50.0,
             color: Constants.primaryColor,

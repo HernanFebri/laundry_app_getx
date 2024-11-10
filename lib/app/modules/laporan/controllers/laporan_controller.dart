@@ -29,7 +29,7 @@ class LaporanController extends GetxController {
           .snapshots()
           .listen((snapshot) {
         var data = snapshot.docs.map((doc) {
-          var laporan = doc.data() as Map<String, dynamic>;
+          var laporan = doc.data();
           laporan['id'] = doc.id; // Simpan ID dokumen ke dalam data laporan
           return laporan;
         }).toList();

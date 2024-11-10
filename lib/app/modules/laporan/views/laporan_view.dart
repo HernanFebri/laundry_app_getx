@@ -1,10 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../detailorder/views/detailorder_view.dart';
+
 import '../../../../utils/constants.dart';
+import '../../detailorder/views/detailorder_view.dart';
 import '../controllers/laporan_controller.dart';
 
 class LaporanView extends GetView<LaporanController> {
@@ -19,13 +20,13 @@ class LaporanView extends GetView<LaporanController> {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 45,
             color: Constants.primaryColor,
           ),
         ),
-        title: Text(
+        title: const Text(
           'Laporan',
           style: TextStyle(
             color: Constants.primaryColor,
@@ -123,7 +124,7 @@ class LaporanView extends GetView<LaporanController> {
                           onPressed: () {
                             Get.back();
                           },
-                          child: Text(
+                          child: const Text(
                             "Kembali",
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -138,7 +139,7 @@ class LaporanView extends GetView<LaporanController> {
                 },
               );
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.filter_list_rounded,
               size: 30,
               color: Constants.primaryColor,
@@ -182,10 +183,10 @@ class LaporanView extends GetView<LaporanController> {
                     var tanggal = (laporan['tanggal'] as Timestamp).toDate();
                     var formattedDate =
                         DateFormat('dd-MM-yyyy   HH:mm').format(tanggal);
-                    var status_pembayaran =
+                    var statusPembayaran =
                         laporan['status_pembayaran'] ?? "Belum Lunas";
 
-                    Color backgroundColor = status_pembayaran == "Belum Lunas"
+                    Color backgroundColor = statusPembayaran == "Belum Lunas"
                         ? Constants.fourColor
                         : Constants.primaryColor;
 

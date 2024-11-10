@@ -56,9 +56,9 @@ class OnboardingView extends GetView<OnboardingController> {
                           horizontal: 20.0,
                           vertical: 20.0,
                         ),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Constants.scaffoldbackgroundColor,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             topRight: Radius.circular(30.0),
                             topLeft: Radius.circular(30.0),
                           ),
@@ -101,7 +101,7 @@ class OnboardingView extends GetView<OnboardingController> {
                               onPressed: () {
                                 Get.toNamed("/login");
                               },
-                              child: Text(
+                              child: const Text(
                                 "Masuk",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -124,7 +124,7 @@ class OnboardingView extends GetView<OnboardingController> {
                               onPressed: () {
                                 Get.toNamed("/register");
                               },
-                              child: Text(
+                              child: const Text(
                                 "Daftar Akun",
                                 style: TextStyle(
                                   fontSize: 16,

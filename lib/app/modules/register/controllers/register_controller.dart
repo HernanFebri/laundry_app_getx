@@ -106,9 +106,6 @@ class RegisterController extends GetxController {
   }
 
   bool isNumeric(String s) {
-    if (s == null) {
-      return false;
-    }
     return double.tryParse(s) != null;
   }
 }

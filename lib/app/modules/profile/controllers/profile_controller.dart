@@ -40,8 +40,8 @@ class ProfileController extends GetxController {
   }
 
   Future<void> pickImage() async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
     if (image != null) {
       String imageUrl = await uploadImage(image);
       imagePath.value = imageUrl;
@@ -53,7 +53,7 @@ class ProfileController extends GetxController {
     Reference storageRef = FirebaseStorage.instance
         .ref()
         .child('profile_images')
-        .child(FirebaseAuth.instance.currentUser!.uid + '.jpg');
+        .child('${FirebaseAuth.instance.currentUser!.uid}.jpg');
     await storageRef.putFile(File(image.path));
     return await storageRef.getDownloadURL();
   }
@@ -76,7 +76,7 @@ class ProfileController extends GetxController {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(
+          title: const Text(
             'Edit Nama',
             style: TextStyle(
               color: Constants.primaryColor,
@@ -126,7 +126,7 @@ class ProfileController extends GetxController {
       builder: (BuildContext context) {
         return AlertDialog(
           alignment: Alignment.center,
-          content: Padding(
+          content: const Padding(
             padding: EdgeInsets.all(10),
             child: Text(
               'Apakah Anda yakin ingin logout?',
@@ -145,7 +145,7 @@ class ProfileController extends GetxController {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(100, 35),
+                    minimumSize: const Size(100, 35),
                     backgroundColor: Constants.primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
@@ -154,7 +154,7 @@ class ProfileController extends GetxController {
                   onPressed: () {
                     Get.back();
                   },
-                  child: Text(
+                  child: const Text(
                     "Batal",
                     style: TextStyle(
                       fontFamily: 'Poppins',
@@ -166,7 +166,7 @@ class ProfileController extends GetxController {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(100, 35),
+                    minimumSize: const Size(100, 35),
                     backgroundColor: Constants.fourColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
@@ -175,7 +175,7 @@ class ProfileController extends GetxController {
                   onPressed: () {
                     logout();
                   },
-                  child: Text(
+                  child: const Text(
                     "Keluar",
                     style: TextStyle(
                       fontFamily: 'Poppins',

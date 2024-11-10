@@ -11,7 +11,7 @@ class EditTransaksiController extends GetxController {
   void updateTransaksi() async {
     var laporan = Get.find<LaporanController>().selectedLaporan.value;
 
-    print('Laporan ID: ${laporan['id']}'); // Debugging: Print ID Dokumen
+    // Debugging: Print ID Dokumen
 
     try {
       await FirebaseFirestore.instance
@@ -26,7 +26,7 @@ class EditTransaksiController extends GetxController {
       Get.snackbar('Success',
           'Transaction updated successfully'); // Snackbar for successful update
     } catch (e) {
-      print('Error: $e'); // Debugging: Print Error
+      // Debugging: Print Error
       Get.snackbar('Error', 'Failed to update transaction');
     }
   }

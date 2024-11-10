@@ -12,7 +12,7 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Profile Saya',
           style: TextStyle(
             color: Constants.primaryColor,
@@ -24,7 +24,7 @@ class ProfileView extends GetView<ProfileController> {
           onPressed: () {
             Get.offAllNamed('/home');
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: Constants.primaryColor,
           ),
@@ -110,7 +110,7 @@ class ProfileView extends GetView<ProfileController> {
                                   ListTile(
                                     leading: SvgPicture.asset(
                                         "assets/images/editprofile.svg"),
-                                    title: Text(
+                                    title: const Text(
                                       'Edit Profil',
                                       style: TextStyle(
                                         color: Constants.primaryColor,
@@ -124,7 +124,7 @@ class ProfileView extends GetView<ProfileController> {
                                   ListTile(
                                     leading: SvgPicture.asset(
                                         "assets/images/ubahfoto.svg"),
-                                    title: Text(
+                                    title: const Text(
                                       'Ubah Foto Profile',
                                       style: TextStyle(
                                         color: Constants.primaryColor,

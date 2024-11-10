@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../utils/constants.dart';
 import '../../tambah_produk/views/tambah_produk_view.dart';
 import '../../transaksi/controllers/transaksi_controller.dart';
-import '../../../../utils/constants.dart';
 import '../controllers/produk_controller.dart';
 
 class ProdukView extends GetView<ProdukController> {
@@ -16,7 +17,7 @@ class ProdukView extends GetView<ProdukController> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'List Produk',
             style: TextStyle(
               color: Constants.primaryColor,
@@ -56,12 +57,12 @@ class ProdukView extends GetView<ProdukController> {
               fontSize: 14,
               fontFamily: 'Poppins',
             ),
-            indicator: UnderlineTabIndicator(
+            indicator: const UnderlineTabIndicator(
               borderSide: BorderSide(
                 width: 2,
                 color: Constants.primaryColor,
               ),
-              insets: const EdgeInsets.symmetric(horizontal: 60),
+              insets: EdgeInsets.symmetric(horizontal: 60),
             ),
           ),
           automaticallyImplyLeading: false,
@@ -69,7 +70,7 @@ class ProdukView extends GetView<ProdukController> {
             onPressed: () {
               Get.back();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.keyboard_arrow_left_rounded,
               size: 45,
               color: Constants.primaryColor,
