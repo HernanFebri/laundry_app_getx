@@ -36,10 +36,10 @@ class HomeView extends GetView<HomeController> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Constants.primaryColor,
-          toolbarHeight: 90,
+          toolbarHeight: 100,
           actions: [
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -129,7 +129,7 @@ class HomeView extends GetView<HomeController> {
           automaticallyImplyLeading: false,
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 30),
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
             child: Column(
@@ -153,7 +153,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
                 Expanded(
                   child: GridView.count(
                     crossAxisCount: 2,
@@ -168,7 +168,7 @@ class HomeView extends GetView<HomeController> {
                           margin: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Constants.menucolor,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -177,7 +177,7 @@ class HomeView extends GetView<HomeController> {
                                 'assets/images/produk.png',
                                 scale: 1.4,
                               ),
-                              const SizedBox(height: 15),
+                              const SizedBox(height: 10),
                               const Text(
                                 'Produk',
                                 style: TextStyle(
@@ -198,7 +198,7 @@ class HomeView extends GetView<HomeController> {
                           margin: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Constants.menucolor,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -228,7 +228,7 @@ class HomeView extends GetView<HomeController> {
                           margin: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Constants.menucolor,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -258,7 +258,7 @@ class HomeView extends GetView<HomeController> {
                           margin: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Constants.menucolor,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
